@@ -1,0 +1,34 @@
+[SIMULATED EVIDENCE — RFC 5737 documentation IPs used throughout]
+
+From: IT Security Desk <[email protected]>
+Reply-To: [email protected]
+Return-Path: <[email protected]>
+To: [email protected]
+Subject: [Internal] Password reset required before end of day
+Date: Fri, 05 Jun 2026 09:03:15 +0530
+Message-ID: <[email protected]>
+Received: from mail.nimbus-secure-verify.com (203.0.113.44)
+        by internal-mx.nimbusfinserv.local with ESMTPS id g7h8i9
+        for <[email protected]>; Fri, 05 Jun 2026 09:03:20 +0530
+Authentication-Results: internal-mx.nimbusfinserv.local;
+        spf=fail smtp.mailfrom=nimbus-secure-verify.com;
+        dkim=none;
+        dmarc=fail (p=REJECT) header.from=nimbusfinserv.in
+Content-Type: text/html; charset="UTF-8"
+
+<p>Hi Team,</p>
+<p>Due to a scheduled security migration, all staff must reset their
+domain password using the link below before 6:00 PM today.</p>
+<p><a href="http://nimbus-secure-verify.com/staff/reset">Reset Password</a></p>
+
+--- Analyst Notes ---
+1. This variant targets INTERNAL EMPLOYEES rather than customers,
+   spoofing an internal IT department to harvest domain credentials —
+   a lateral-movement / initial-access technique distinct from the
+   customer-facing lures in samples 01–02.
+2. Same spoofed sending domain and hosting IP (203.0.113.44) as
+   sample-01, confirming a single campaign infrastructure serving
+   multiple lure templates.
+3. Targeting employees (not just customers) significantly raises the
+   potential blast radius, since compromised staff credentials could
+   grant access to internal banking systems.

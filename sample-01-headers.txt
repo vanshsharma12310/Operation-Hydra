@@ -1,0 +1,48 @@
+[SIMULATED EVIDENCE — RFC 5737 documentation IPs used throughout]
+
+From: Nimbus FinServ Support <[email protected]>
+Reply-To: [email protected]
+Return-Path: <[email protected]>
+To: [email protected]
+Subject: URGENT: Re-verify your KYC to avoid account suspension
+Date: Mon, 01 Jun 2026 03:12:44 +0530
+Message-ID: <[email protected]>
+Received: from mail.nimbus-secure-verify.com (203.0.113.44)
+        by mx.example.net with ESMTPS id a1b2c3
+        for <[email protected]>; Mon, 01 Jun 2026 03:12:50 +0530
+Received: from [10.10.10.5] (unknown [203.0.113.44])
+        by mail.nimbus-secure-verify.com (Postfix) with ESMTP id 7F3C21A2
+Authentication-Results: mx.example.net;
+        spf=fail smtp.mailfrom=nimbus-secure-verify.com;
+        dkim=none;
+        dmarc=fail (p=REJECT) header.from=nimbusfinserv.in
+Content-Type: multipart/mixed; boundary="000000000000a1b2c3"
+X-Mailer: PHPMailer 6.1 (simulated bulk sender)
+
+--000000000000a1b2c3
+Content-Type: text/html; charset="UTF-8"
+
+<p>Dear Customer,</p>
+<p>Your KYC verification has expired. Click below to re-verify within
+24 hours or your account will be suspended.</p>
+<p><a href="http://nimbus-secure-verify.com/kyc/login">Re-Verify Now</a></p>
+
+--000000000000a1b2c3
+Content-Type: application/octet-stream; name="KYC Update Form.pdf.exe"
+Content-Disposition: attachment; filename="KYC Update Form.pdf.exe"
+Content-Transfer-Encoding: base64
+
+[BASE64 PAYLOAD REDACTED — see evidence/malware/iocs.json for hash/behavior]
+--000000000000a1b2c3--
+
+--- Analyst Notes ---
+1. Display name "Nimbus FinServ Support" masks true sending domain
+   (nimbus-secure-verify.com), which is NOT the legitimate
+   nimbusfinserv.in domain.
+2. SPF fails: sending IP 203.0.113.44 is not authorized by the
+   legitimate domain's SPF record.
+3. DKIM absent — no cryptographic proof of origin.
+4. DMARC fails against a p=REJECT policy; delivery indicates the
+   receiving gateway did not enforce DMARC.
+5. Urgency + threat-of-suspension is a classic social-engineering lure.
+6. Double-extension attachment (.pdf.exe) disguises an executable.

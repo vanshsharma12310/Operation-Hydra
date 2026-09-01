@@ -1,0 +1,31 @@
+[SIMULATED EVIDENCE — RFC 5737 documentation IPs used throughout]
+
+From: Nimbus FinServ Rewards <[email protected]>
+Reply-To: [email protected]
+Return-Path: <[email protected]>
+To: [email protected]
+Subject: You've received a refund of INR 2,450 — claim now
+Date: Wed, 03 Jun 2026 11:47:02 +0530
+Message-ID: <[email protected]>
+Received: from mail2.nimbus-secure-verify.com (203.0.113.51)
+        by mx.example.net with ESMTPS id d4e5f6
+        for <[email protected]>; Wed, 03 Jun 2026 11:47:09 +0530
+Authentication-Results: mx.example.net;
+        spf=fail smtp.mailfrom=nimbus-secure-verify.com;
+        dkim=fail (bad signature) header.d=nimbus-secure-verify.com;
+        dmarc=fail (p=REJECT) header.from=nimbusfinserv.in
+Content-Type: text/html; charset="UTF-8"
+
+<p>A refund of INR 2,450.00 is pending on your account.</p>
+<p>Claim within 12 hours: <a href="http://nimbus-secure-verify.com/refund/claim?id=88213">Claim Refund</a></p>
+
+--- Analyst Notes ---
+1. Second sending IP (203.0.113.51) in the same /24 block as sample-01,
+   suggesting a shared bulletproof-hosting range for the campaign.
+2. This variant carries a DKIM signature, but it fails validation —
+   an attempt to appear more legitimate that doesn't hold up to checking.
+3. "Refund" lure (financial incentive) is a different psychological
+   trigger from sample-01's "urgent suspension" (fear-based) lure —
+   evidence of A/B-style lure testing by the threat actor.
+4. No attachment in this variant; relies purely on a credential-
+   harvesting landing page at /refund/claim.
