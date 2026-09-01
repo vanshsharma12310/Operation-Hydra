@@ -1,0 +1,30 @@
+[SIMULATED WHOIS RECORD — generated for academic demonstration only]
+[Produced via: python scripts/whois_lookup.py --domain nimbus-secure-verify.com --demo]
+
+Domain Name: NIMBUS-SECURE-VERIFY.COM
+Registry Domain ID: SIMULATED-1234567890
+Registrar: Fictional Registrar LLC
+Registrar IANA ID: 99999 (fictional)
+Registrant Organization: REDACTED FOR PRIVACY (Privacy Proxy)
+Registrant Country: REDACTED FOR PRIVACY
+Creation Date: 2026-05-28T00:00:00Z
+Registry Expiry Date: 2027-05-28T00:00:00Z
+Updated Date: 2026-05-28T00:00:00Z
+Name Server: NS1.BULLETPROOF-HOSTING-EXAMPLE.NET
+Name Server: NS2.BULLETPROOF-HOSTING-EXAMPLE.NET
+DNSSEC: unsigned
+Domain Status: clientTransferProhibited
+
+--- Analyst Notes ---
+1. Domain registered only 4 days before the first phishing email was
+   observed (2026-06-01) — a very short "aging" window is a strong
+   spoofed-domain indicator, since legitimate financial-service domains
+   are typically years old.
+2. WHOIS privacy proxy hides the true registrant — common evasion
+   technique, not inherently malicious alone but suspicious when
+   combined with domain age and lookalike naming.
+3. Name servers belong to a hosting provider with no prior reputation
+   history in this simulation, consistent with "bulletproof hosting"
+   providers that are lenient about abuse complaints.
+4. Domain name itself ("nimbus-secure-verify.com") is a classic
+   typosquat/lookalike pattern against the real "nimbusfinserv.in".
