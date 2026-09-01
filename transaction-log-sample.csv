@@ -1,0 +1,6 @@
+txn_id,upi_ref,timestamp_ist,amount_inr,src_vpa,dst_vpa,device_id,device_known,geo_ip,auth_method,flag
+SIM-000217,998877665544,2026-06-09T03:47:12,48500.00,[email protected],[email protected],DEV-UNK-7781,false,198.51.100.77,OTP,HIGH_RISK
+SIM-000218,998877665545,2026-06-09T03:52:40,12000.00,[email protected],[email protected],DEV-UNK-7781,false,198.51.100.77,OTP,HIGH_RISK
+SIM-000219,998877665546,2026-06-09T04:01:05,9800.00,[email protected],[email protected],DEV-UNK-4402,false,198.51.100.81,OTP,HIGH_RISK
+SIM-000220,998877665547,2026-06-09T14:20:33,650.00,[email protected],[email protected],DEV-KNOWN-1123,true,203.0.113.9,PIN,NORMAL
+SIM-000221,998877665548,2026-06-11T05:16:02,31200.00,[email protected],[email protected],DEV-UNK-9987,false,198.51.100.90,OTP,HIGH_RISK
