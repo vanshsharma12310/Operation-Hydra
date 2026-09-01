@@ -1,0 +1,31 @@
+{
+  "case": "Operation Hydra",
+  "disclaimer": "All values below are SIMULATED for academic purposes.",
+  "sample": {
+    "filename": "KYC Update Form.pdf.exe",
+    "delivery_vector": "Email attachment (see evidence/phishing-emails/sample-01-headers.txt)",
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b85_SIMULATED",
+    "md5": "d41d8cd98f00b204e9800998ecf8427e_SIMULATED",
+    "file_type_claimed": "PDF",
+    "file_type_actual": "PE32 executable (double-extension trick)",
+    "classification": "RAT (Remote Access Trojan) with keylogger module",
+    "family_guess": "Generic banking RAT (fictional: 'HydraRAT')"
+  },
+  "network_iocs": [
+    { "type": "c2_domain", "value": "hydra-c2-panel.example", "notes": "Beacon check-in every ~60s" },
+    { "type": "c2_ip", "value": "198.51.100.23", "notes": "RFC5737 TEST-NET-2 range used as stand-in" },
+    { "type": "exfil_ip", "value": "198.51.100.77", "notes": "Destination for exfiltrated keylog/OTP data" }
+  ],
+  "host_iocs": [
+    { "type": "persistence", "value": "HKCU\\Software\\Microsoft\\Windows\\CurrentVersion\\Run\\SecurityHelper", "notes": "Simulated registry Run-key persistence" },
+    { "type": "scheduled_task", "value": "\\Microsoft\\Windows\\SecurityHealthUpdate", "notes": "Alternate/backup persistence mechanism" },
+    { "type": "dropped_file", "value": "%APPDATA%\\SecHelper\\svchost_helper.exe", "notes": "Renamed to mimic legitimate Windows process" }
+  ],
+  "behaviors": [
+    { "behavior": "Keystroke logging scoped to window titles containing 'bank', 'UPI', 'pay'", "mitre_attack": "T1056.001 Input Capture: Keylogging" },
+    { "behavior": "Periodic beaconing to C2 over HTTPS", "mitre_attack": "T1071.001 Application Layer Protocol: Web Protocols" },
+    { "behavior": "Registry Run key persistence", "mitre_attack": "T1547.001 Boot or Logon Autostart Execution" },
+    { "behavior": "SMS/OTP notification scraping (simulated mobile companion component)", "mitre_attack": "T1636.004 Protected User Data: SMS Messages" },
+    { "behavior": "Process name masquerading as svchost", "mitre_attack": "T1036.005 Masquerading: Match Legitimate Name or Location" }
+  ]
+}
